@@ -1,0 +1,148 @@
+<nodeDefs>
+    <!-- NODE DEF from 5.0 document http://wiki.universal-devices.com/index.php?title=V50_MAIN -->
+    <!-- controller, this must mach the id in your Controller class-->
+    <nodeDef id="tuya" nls="tuyanls">
+        <editors/>
+        <sts>
+            <st id="ST" editor="bool"/>
+        </sts>
+        <cmds>
+            <accepts>
+                <cmd id="DISCOVER"/>
+            </accepts>
+        </cmds>
+    </nodeDef>
+    <nodeDef id="tuyanode" nls="tuyanodenls">
+        <editors/>
+        <sts>
+            <st id="ST" editor="bool" />
+            <st id="GV3" editor="I_SWITCH_STATUS"/>
+            <st id="GV1" editor="I_PERCENT"/>
+            <st id="GV2" editor="I_DURATION"/>
+        </sts>
+        <cmds>
+            <accepts>
+                <cmd id="SET_BRIGHTNESS">
+                    <p id="" editor="I_PERCENT" init="GV1"/>
+                </cmd>
+                <cmd id="SET_ONTIME">
+                    <p id="" editor="I_DURATION" init="GV2"/>
+                </cmd>
+                <cmd id="ON"/>
+                <cmd id="OFF"/>
+                <cmd id="AUTO"/>
+                <cmd id="QUERY"/>
+            </accepts>
+        </cmds>
+    </nodeDef>
+    <nodeDef id="lightv2" nls="lgtv2">
+        <editors />
+        <sts>
+            <st id="ST" editor="bool" />
+            <st id="GV2" editor="bool" />
+            <st id="GV3" editor="LEVEL" />
+            <st id="GV4" editor="MODE" />
+        </sts>
+        <cmds>
+            <sends />
+            <accepts>
+                <cmd id="LGTON" />
+                <cmd id="LGTOF" />
+                <cmd id="LGTCFLIP" />
+
+                <cmd id="STLVL">
+                    <p id="" editor="LEVEL" init="GV3" />
+                </cmd>
+
+                <cmd id="MODE">
+                    <p id="" editor="MODE" init="GV4" />
+                </cmd>
+
+                <cmd id="QUERY" />
+            </accepts>
+        </cmds>
+    </nodeDef>
+    <nodeDef id="switch" nls="swt">
+        <editors />
+        <sts>
+            <st id="ST" editor="bool" />
+            <st id="GV2" editor="bool" />
+        </sts>
+        <cmds>
+            <sends />
+            <accepts>
+                <cmd id="SWTON" />
+                <cmd id="SWTOF" />
+                <cmd id="QUERY" />
+            </accepts>
+        </cmds>
+    </nodeDef>
+    <nodeDef id="lightv1" nls="lgtv1">
+        <editors />
+        <sts>
+            <st id="ST" editor="bool" />
+            <st id="GV2" editor="bool" />
+            <st id="GV3" editor="LEVEL" />
+            <st id="GV4" editor="MODE" />
+        </sts>
+        <cmds>
+            <sends />
+            <accepts>
+                <cmd id="LGTON" />
+                <cmd id="LGTOF" />
+                <!--<cmd id="LGTCFLIP" />
+
+                <cmd id="STLVL">
+                    <p id="" editor="LEVEL" init="GV3" />
+                </cmd>-->
+
+                <cmd id="MODE">
+                    <p id="" editor="MODE" init="GV4" />
+                </cmd>
+
+                <cmd id="QUERY" />
+            </accepts>
+        </cmds>
+    </nodeDef>
+    <nodeDef id="switch" nls="swt">
+        <editors />
+        <sts>
+            <st id="ST" editor="bool" />
+            <st id="GV2" editor="bool" />
+        </sts>
+        <cmds>
+            <sends />
+            <accepts>
+                <cmd id="SWTON" />
+                <cmd id="SWTOF" />
+                <cmd id="QUERY" />
+            </accepts>
+        </cmds>
+    </nodeDef>
+    <nodeDef id="switchdim" nls="swtdim">
+        <editors />
+        <sts>
+            <st id="ST" editor="bool" />
+            <st id="GV2" editor="bool" />
+            <st id="GV3" editor="LEVEL" />
+            <st id="GV4" editor="MODESW" />
+        </sts>
+        <cmds>
+            <sends />
+            <accepts>
+                <cmd id="SWTON" />
+                <cmd id="SWTOF" />
+                <cmd id="QUERY" />
+
+                <cmd id="STLVL">
+                    <p id="" editor="LEVEL" init="GV3" />
+                </cmd>
+
+                <cmd id="MODESW">
+                    <p id="" editor="MODESW" init="GV4" />
+                </cmd>
+            </accepts>
+        </cmds>
+    </nodeDef>
+
+</nodeDefs>

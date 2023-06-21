@@ -1,0 +1,24 @@
+{
+    "cSpell.words": [
+        "CONFIGFILE",
+        "cpvpi",
+        "DEVICELED",
+        "DEVICESW",
+        "iwmn",
+        "kvtr",
+        "lgtv",
+        "lightv",
+        "MODESW",
+        "SNAPSHOTFILE",
+        "switchdim",
+        "swtdim",
+        "SWTOF",
+        "SWTON",
+        "tuyanls",
+        "txejpdfda"
+    ],
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.autopep8"
+    },
+    "python.formatting.provider": "none"
+}

@@ -1,0 +1,41 @@
+{
+	"name": "TUYA_Cloud",
+	"docs": "https://github.com/sjpbailey/udi-tuya-poly-cloud-api-v3/README.md",
+	"type": "python3",
+	"executable": "tuya-cloud.py",
+	"install": "install.sh",
+	"description": "Tuya Lights and switches by TreatLife",
+	"notice": "Please follow all codes & safety precautions for mechanical equipment",
+	"shortPoll": "600",
+	"longPoll": "6600",
+	"testMode": false,
+	"logLevel": "INFO",
+	"profile_version": "3.0.2",
+	"customParams": {
+		"apiAccessId": "Your_Access_Id",
+		"apiKey": "Your_Secret",
+        "apiEndpoint": "https://openapi.tuyaus.com/",
+		"apiMq": "wss://mqe.tuyaus.com:8285/",
+		"apiUid": "Your_UID",
+        "apiRegion": "us"
+	},
+	"credits": [
+		{
+			"title": "Tuya TreatLife LED Bulbs and Switches",
+			"author": "Steve Bailey (sjpbailey)",
+			"version": "3.0.2",
+			"date": "June 15, 2023",
+			"source": "https://github.com/sjpbailey/udi-tuya-poly-cloud-api-v3",
+			"license": "https://github.com/sjpbailey/udi-tuya-poly-cloud-api-v3/LICENSE"
+		}
+	],
+	"store": {
+		"developer": "sjpbailey1961@gmail.com",
+		"purchaseOptions": [
+			{
+				"isPerpetual": true,
+				"price": 0
+			}
+		]
+	}
+}

@@ -1,0 +1,27 @@
+<editors>
+    <!-- Boolean -->
+    <editor id="bool">
+        <range uom="2" subset="0,1"/>
+    </editor>
+    <editor id="I_DURATION">
+        <range uom="45" subset="0,1,5,20"/>
+    </editor>
+    <editor id="I_PERCENT">
+        <range uom="51" min="1" max="100" prec="0" step="1" />
+    </editor>
+    <editor id="I_SWITCH_STATUS">
+        <range uom="25" subset="0,1,2,3" nls="ISS"/>
+    </editor>
+    <editor id="I_DEBUG">
+        <range uom="25" subset="9,10,20,30,40,50" nls="CDM"/>
+    </editor>
+    <editor id="LEVEL">
+        <range uom="51" min="1" max="100" step="1" prec="0"/>
+    </editor>
+    <editor id="MODE">
+        <range uom="25" subset="0-10" nls="MODE" />
+    </editor>
+    <editor id="MODESW">
+        <range uom="25" subset="0-1" nls="MODESW" />
+    </editor>
+</editors>

@@ -1,0 +1,92 @@
+# controller
+ND-tuya-NAME = Tuya NodeServer Controller
+ND-tuya-ICON = Alarm
+ST-tuyanls-ST-NAME = Tuya NodeServer Running
+CMD-tuyanls-DISCOVER-NAME = Query
+
+
+# switch status
+ISS-0 = Unknown
+ISS-1 = On
+ISS-2 = Off
+ISS-3 = Auto
+
+# LightNodeV1
+ND-lightv1-NAME = Light Node V1
+ND-lightv1-ICON = Output
+ST-lgtv1-ST-NAME = Node Status
+ST-lgtv1-GV2-NAME = Light Status
+ST-lgtv1-GV3-NAME = Light Level
+ST-lgtv1-GV4-NAME = Light Mode Command
+#ST-lgtv1-GV5-NAME = Light Color Command
+#ST-lgtv1-GV5-NAME = Light Colour
+#ST-lgtv1-GV6-NAME = Light Scene
+#ST-lgtv1-GV7-NAME = Light Music
+#ST-lgtv1-GV8-NAME = Light White
+
+
+CMD-lgtv1-LGTON-NAME = Light On
+CMD-lgtv1-LGTOF-NAME = Light Off
+#CMD-lgtv1-LGTCFLIP-NAME = Light Test
+#CMD-lgtv1-STLVL-NAME = Set Level
+CMD-lgtv1-MODE-NAME = Command
+
+
+# LightNodeV2
+ND-lightv2-NAME = Light Node V2
+ND-lightv2-ICON = Output
+ST-lgtv2-ST-NAME = Node Status
+ST-lgtv2-GV2-NAME = Light Status
+ST-lgtv2-GV3-NAME = Light Level
+ST-lgtv2-GV4-NAME = Light Mode Command
+#ST-lgtv2-GV5-NAME = Light Color Command
+#ST-lgtv2-GV5-NAME = Light Colour
+#ST-lgtv2-GV6-NAME = Light Scene
+#ST-lgtv2-GV7-NAME = Light Music
+#ST-lgtv2-GV8-NAME = Light White
+
+
+CMD-lgtv2-LGTON-NAME = Light On
+CMD-lgtv2-LGTOF-NAME = Light Off
+CMD-lgtv2-LGTCFLIP-NAME = Light Test
+CMD-lgtv2-STLVL-NAME = Set Level
+CMD-lgtv2-MODE-NAME = Command
+
+# LED Modes
+MODE-0 = Colour
+MODE-1 = Scene
+MODE-2 = Music
+MODE-3 = Red
+MODE-4 = Orange
+MODE-5 = Yellow
+MODE-6 = Green
+MODE-7 = Blue
+MODE-8 = Indigo
+MODE-9 = Violet
+MODE-10 = White
+
+# Switch
+ND-switch-NAME = Switch 
+ND-switch-ICON = Electricity
+ST-swt-ST-NAME = Node Status
+ST-swt-GV2-NAME = Switch Status
+CMD-swt-SWTON-NAME = Switch On
+CMD-swt-SWTOF-NAME = Switch Off
+CMD-swt-QUERY-NAME = Query
+
+# Switch Dimmer
+ND-switchdim-NAME = Dimmer Switch 
+ND-switchdim-ICON = Electricity
+ST-swtdim-ST-NAME = Node Status
+ST-swtdim-GV2-NAME = Switch Status
+ST-swtdim-GV3-NAME = Light Level
+ST-swtdim-GV4-NAME = Light Mode Command
+CMD-swtdim-SWTON-NAME = Switch On
+CMD-swtdim-SWTOF-NAME = Switch Off
+CMD-swtdim-STLVL-NAME = Set Level
+CMD-swtdim-MODESW-NAME = Command
+CMD-swtdim-QUERY-NAME = Query
+
+# Dimmer Modes
+MODESW-0 = halogen
+MODESW-1 = incandescent
