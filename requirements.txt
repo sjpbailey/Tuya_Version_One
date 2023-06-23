@@ -1,5 +1,6 @@
 tuya-bulb-control==0.1b3
 tuya-connector-python==0.1.2
 tuya-iot-py-sdk==0.6.6
+tzdata==2023.3
 udi-interface==3.0.59
-asyncio==3.4.3
+websocket-client==1.5.2
