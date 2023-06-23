@@ -18,7 +18,7 @@ LOG_HANDLER = udi_interface.LOG_HANDLER
 if __name__ == "__main__":
     try:
         LOGGER.debug("Staring Tuya Cloud Interface")
-        polyglot = udi_interface.Interface([TuyaController, TuyaNode])
+        polyglot = udi_interface.Interface([TuyaController, tuya_switch_node])
         polyglot.start()
         control = TuyaController(
             polyglot, 'controller', 'controller', 'Tuya Cloud')
