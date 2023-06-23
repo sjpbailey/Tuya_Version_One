@@ -7,7 +7,6 @@ import logging
 from nodes import tuya_light_node_v1
 from nodes import tuya_light_node
 from nodes import tuya_switch_node
-from nodes import TuyaNode
 from nodes import TuyaController
 import udi_interface
 import sys
