@@ -149,14 +149,6 @@ class TuyaController(udi_interface.Node):
                     self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint)
                 self.poly.addNode(node)
                 self.wait_for_node_done()
-            elif i['model'] == "DS01C(\u91cf\u4ea7\uff09":
-                LOGGER.info('Device Type')
-                LOGGER.info("SWITCH")
-                LOGGER.info('\n')
-                node = tuya_switch_node.SwitchNode(
-                    self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint)
-                self.poly.addNode(node)
-                self.wait_for_node_done()
             elif i['model'] == "\u5f00\u5173(\u84dd\u7259+Wi-Fi)":
                 LOGGER.info('Device Type')
                 LOGGER.info("SWITCH")
