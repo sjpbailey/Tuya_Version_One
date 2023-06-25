@@ -52,6 +52,7 @@ class LightNode(udi_interface.Node):
         commands = {'commands': [{'code': 'switch_led', 'value': True}]}
         openapi.post(
             '/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
+        time.sleep(.5)
         self.SwStat(self)
 
     # Light Off
@@ -66,6 +67,7 @@ class LightNode(udi_interface.Node):
         commands = {'commands': [{'code': 'switch_led', 'value': False}]}
         openapi.post(
             '/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
+        time.sleep(.5)
         self.SwStat(self)
 
     # Test Light
@@ -84,18 +86,21 @@ class LightNode(udi_interface.Node):
         openapi.post(
             '/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
         LOGGER.info('On Test')
+        time.sleep(.5)
         self.SwStat(self)
-        time.sleep(2)
+        time.sleep(1)
         commands = {'commands': [{'code': 'switch_led', 'value': False}]}
         openapi.post(
             '/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
         LOGGER.info('Off Test')
+        time.sleep(.5)
         self.SwStat(self)
         time.sleep(2)
         commands = {'commands': [{'code': 'switch_led', 'value': True}]}
         openapi.post(
             '/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
         LOGGER.info('On Test')
+        time.sleep(.5)
         self.SwStat(self)
         time.sleep(2)
 
@@ -108,7 +113,7 @@ class LightNode(udi_interface.Node):
             openapi.post(
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
             self.setDriver('GV3', level)
-            time.sleep(2)
+            time.sleep(1)
 
         # Test Modes
         LOGGER.info('\nTesting Bulb Modes')
@@ -116,24 +121,28 @@ class LightNode(udi_interface.Node):
         commands = {'commands': [{'code': 'work_mode', 'value': 'colour'}]}
         openapi.post(
             '/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
+        time.sleep(.5)
         self.SwStat(self)
         time.sleep(2)
         LOGGER.info('Scene Test')
         commands = {'commands': [{'code': 'work_mode', 'value': 'scene'}]}
         openapi.post(
             '/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
+        time.sleep(.5)
         self.SwStat(self)
         time.sleep(2)
         LOGGER.info('Music Test')
         commands = {'commands': [{'code': 'work_mode', 'value': 'music'}]}
         openapi.post(
             '/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
+        time.sleep(.5)
         self.SwStat(self)
         time.sleep(2)
         LOGGER.info('White Test')
         commands = {'commands': [{'code': 'work_mode', 'value': 'white'}]}
         openapi.post(
             '/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
+        time.sleep(.5)
         self.SwStat(self)
         time.sleep(2)
 
@@ -176,6 +185,12 @@ class LightNode(udi_interface.Node):
             else:
                 LOGGER.info('Test Complete')
                 return
+        time.sleep(.5)
+        commands = {'commands': [{'code': 'work_mode', 'value': 'white'}]}
+        openapi.post(
+            '/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
+        time.sleep(.5)
+        self.SwStat(self)    
 
     """async def main(self):
         LOGGER.info(f"started at {time.strftime('%X')}")
@@ -201,20 +216,26 @@ class LightNode(udi_interface.Node):
             openapi.post(
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
             LOGGER.info('Colour')
+            time.sleep(.5)
             self.SwStat(self)
+            time.sleep(1)
         # Scene
         elif self.modeOn == 1:
             commands = {'commands': [{'code': 'work_mode', 'value': 'scene'}]}
             openapi.post(
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
             LOGGER.info('Scene')
+            time.sleep(.5)
             self.SwStat(self)
+            
         # Music
         elif self.modeOn == 2:
             commands = {'commands': [{'code': 'work_mode', 'value': 'music'}]}
             openapi.post(
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
+            time.sleep(.5)
             self.SwStat(self)
+            
         # Red
         elif self.modeOn == 3:
             LOGGER.info('colour_data_v2')
@@ -224,7 +245,9 @@ class LightNode(udi_interface.Node):
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
             # (255, 0, 0)
             LOGGER.info('Red')
+            time.sleep(.5)
             self.SwStat(self)
+            
         # Orange
         elif self.modeOn == 4:
             LOGGER.info('colour_data_V2' 'Orange')
@@ -234,7 +257,9 @@ class LightNode(udi_interface.Node):
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
             # (255, 127, 0)
             LOGGER.info('Orange')
+            time.sleep(.5)
             self.SwStat(self)
+            
         # Yellow
         elif self.modeOn == 5:
             LOGGER.info('colour_data_v2' 'Yellow')
@@ -244,7 +269,9 @@ class LightNode(udi_interface.Node):
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
             # (255, 200, 0)
             LOGGER.info('Yellow')
+            time.sleep(.5)
             self.SwStat(self)
+            
         # Green
         elif self.modeOn == 6:
             LOGGER.info('colour_data_v2' 'green')
@@ -254,7 +281,9 @@ class LightNode(udi_interface.Node):
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
             # (0, 255, 0)
             LOGGER.info('Green')
+            time.sleep(.5)
             self.SwStat(self)
+            
         # Blue
         elif self.modeOn == 7:
             LOGGER.info('colour_data_v2' 'Blue')
@@ -264,7 +293,9 @@ class LightNode(udi_interface.Node):
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
             # (0, 0, 255)
             LOGGER.info('Blue')
+            time.sleep(.5)
             self.SwStat(self)
+            
         # Indigo
         elif self.modeOn == 8:
             LOGGER.info('colour_data_v2' 'Indigo')
@@ -274,7 +305,9 @@ class LightNode(udi_interface.Node):
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
             # (46, 43, 95)
             LOGGER.info('Indigo')
+            time.sleep(.5)
             self.SwStat(self)
+            
         # Violet
         elif self.modeOn == 9:
             LOGGER.info('colour_data_v2' 'Violet')
@@ -284,13 +317,16 @@ class LightNode(udi_interface.Node):
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
             # (139, 0, 255)
             LOGGER.info('Violet')
+            time.sleep(.5)
             self.SwStat(self)
+            
         # White
         elif self.modeOn == 10:
             commands = {'commands': [{'code': 'work_mode', 'value': 'white'}]}
             openapi.post(
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
             LOGGER.info('White')
+            time.sleep(.5)
             self.SwStat(self)
         else:
             pass
