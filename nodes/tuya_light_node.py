@@ -88,7 +88,7 @@ class LightNode(udi_interface.Node):
         LOGGER.info('On Test')
         time.sleep(.5)
         self.SwStat(self)
-        time.sleep(1)
+        time.sleep(2)
         commands = {'commands': [{'code': 'switch_led', 'value': False}]}
         openapi.post(
             '/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
@@ -107,7 +107,7 @@ class LightNode(udi_interface.Node):
         # Dimmer Test
         LOGGER.info('\nDimmer Control Test')
         for level in range(11):
-            LOGGER.info('    Level: %d%%' % (level*10))
+            LOGGER.info('    Level: %d%%' % (level*100))
             commands = {'commands': [
                 {'code': 'bright_value_v2', 'value': int(level)*10}]}
             openapi.post(
