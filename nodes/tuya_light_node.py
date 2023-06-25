@@ -185,7 +185,7 @@ class LightNode(udi_interface.Node):
             else:
                 LOGGER.info('Test Complete')
                 return
-        time.sleep(.5)
+        time.sleep(1)
         commands = {'commands': [{'code': 'work_mode', 'value': 'white'}]}
         openapi.post(
             '/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
