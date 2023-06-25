@@ -43,6 +43,7 @@ class SwitchNode(udi_interface.Node):
         commands = {'commands': [{'code': 'switch_led_1', 'value': True}]}
         openapi.post(
             '/v1.0/iot-03/devices/{}/commands'.format(DEVICESW_ID), commands)
+        time.sleep(.5)
         self.SwStat(self)
 
     def setSwOff(self, command):
@@ -56,6 +57,7 @@ class SwitchNode(udi_interface.Node):
         commands = {'commands': [{'code': 'switch_led_1', 'value': False}]}
         openapi.post(
             '/v1.0/iot-03/devices/{}/commands'.format(DEVICESW_ID), commands)
+        time.sleep(.5)
         self.SwStat(self)
 
     def setDim(self, command):
