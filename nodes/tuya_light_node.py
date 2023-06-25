@@ -107,9 +107,9 @@ class LightNode(udi_interface.Node):
         # Dimmer Test
         LOGGER.info('\nDimmer Control Test')
         for level in range(11):
-            LOGGER.info('    Level: %d%%' % (level*100))
+            LOGGER.info('    Level: %d%%' % (level*10))
             commands = {'commands': [
-                {'code': 'bright_value_v2', 'value': int(level)*10}]}
+                {'code': 'bright_value_v2', 'value': int(level)*100}]}
             openapi.post(
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
             self.setDriver('GV3', level)
