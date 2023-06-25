@@ -12,29 +12,6 @@
             </accepts>
         </cmds>
     </nodeDef>
-    <nodeDef id="tuyanode" nls="tuyanodenls">
-        <editors/>
-        <sts>
-            <st id="ST" editor="bool" />
-            <st id="GV3" editor="I_SWITCH_STATUS"/>
-            <st id="GV1" editor="I_PERCENT"/>
-            <st id="GV2" editor="I_DURATION"/>
-        </sts>
-        <cmds>
-            <accepts>
-                <cmd id="SET_BRIGHTNESS">
-                    <p id="" editor="I_PERCENT" init="GV1"/>
-                </cmd>
-                <cmd id="SET_ONTIME">
-                    <p id="" editor="I_DURATION" init="GV2"/>
-                </cmd>
-                <cmd id="ON"/>
-                <cmd id="OFF"/>
-                <cmd id="AUTO"/>
-                <cmd id="QUERY"/>
-            </accepts>
-        </cmds>
-    </nodeDef>
     <nodeDef id="lightv2" nls="lgtv2">
         <editors />
         <sts>
