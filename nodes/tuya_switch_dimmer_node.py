@@ -17,7 +17,7 @@ class SwitchNode(udi_interface.Node):
     def __init__(self, polyglot, primary, address, name, new_id, deviceid, apiAccessId, apiSecret, apiEndpoint):
         super(SwitchNode, self).__init__(polyglot, primary, address, name)
         self.poly = polyglot
-        self.lpfx = '%s:%s' % (address, name)  # address,name
+        self.lpfx = '%s:%s' % (address, name)
         self.poly.subscribe(self.poly.START, self.start, address)
         self.poly.subscribe(self.poly.POLL, self.poll)
         self.new_id = new_id
@@ -43,7 +43,7 @@ class SwitchNode(udi_interface.Node):
         commands = {'commands': [{'code': 'switch_led_1', 'value': True}]}
         openapi.post(
             '/v1.0/iot-03/devices/{}/commands'.format(DEVICESW_ID), commands)
-        time.sleep(.5)
+        time.sleep(.1)
         self.SwStat(self)
 
     def setSwOff(self, command):
@@ -57,7 +57,7 @@ class SwitchNode(udi_interface.Node):
         commands = {'commands': [{'code': 'switch_led_1', 'value': False}]}
         openapi.post(
             '/v1.0/iot-03/devices/{}/commands'.format(DEVICESW_ID), commands)
-        time.sleep(.5)
+        time.sleep(.1)
         self.SwStat(self)
 
     def setDim(self, command):
@@ -68,7 +68,7 @@ class SwitchNode(udi_interface.Node):
 
         openapi = TuyaOpenAPI(API_ENDPOINT, ACCESS_ID, ACCESS_KEY)
         openapi.connect()
-        self.SwStat(self)
+        
         ivr_one = 'percent'
         percent = int(command.get('value'))
 
@@ -83,17 +83,15 @@ class SwitchNode(udi_interface.Node):
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICESW_ID), commands)
             self.setDriver('GV3', percent)
             LOGGER.info('Dimmer Setpoint = ' + str(percent) + ' Level')
-
+            time.sleep(.1)
+            self.SwStat(self)
+            
     # Set Modes
     def modeOn(self, command):
         API_ENDPOINT = self.API_ENDPOINT
-        # LOGGER.info(API_ENDPOINT)
         ACCESS_ID = self.ACCESS_ID
-        # LOGGER.info(ACCESS_ID)
         ACCESS_KEY = self.ACCESS_KEY
-        # LOGGER.info(ACCESS_KEY)
         DEVICESW_ID = self.DEVICESW_ID
-        # LOGGER.info(DEVICELED_ID)
         self.SwStat(self)
         openapi = TuyaOpenAPI(API_ENDPOINT, ACCESS_ID, ACCESS_KEY)
         openapi.connect()
@@ -106,6 +104,7 @@ class SwitchNode(udi_interface.Node):
             openapi.post(
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICESW_ID), commands)
             LOGGER.info('Halogen')
+            time.sleep(.1)
             self.SwStat(self)
         # incandescent
         elif self.modeOn == 1:
@@ -114,18 +113,16 @@ class SwitchNode(udi_interface.Node):
             openapi.post(
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICESW_ID), commands)
             LOGGER.info('incandescent')
+            time.sleep(.1)
+            self.SwStat(self)
         else:
             return
 
     def SwStat(self, command):
         API_ENDPOINT = self.API_ENDPOINT
-        # LOGGER.info(API_ENDPOINT)
         ACCESS_ID = self.ACCESS_ID
-        # LOGGER.info(ACCESS_ID)
         ACCESS_KEY = self.ACCESS_KEY
-        # LOGGER.info(ACCESS_KEY)
         DEVICESW_ID = self.DEVICESW_ID
-        # LOGGER.info(DEVICESW_ID)
         openapi = TuyaOpenAPI(API_ENDPOINT, ACCESS_ID, ACCESS_KEY)
         openapi.connect()
 

@@ -17,7 +17,7 @@ class SwitchNode(udi_interface.Node):
     def __init__(self, polyglot, primary, address, name, new_id, deviceid, apiAccessId, apiSecret, apiEndpoint):
         super(SwitchNode, self).__init__(polyglot, primary, address, name)
         self.poly = polyglot
-        self.lpfx = '%s:%s' % (address, name)
+        self.lpfx = '%s:%s' % (address, name)  # address,name
         self.poly.subscribe(self.poly.START, self.start, address)
         self.poly.subscribe(self.poly.POLL, self.poll)
         self.new_id = new_id
@@ -43,7 +43,7 @@ class SwitchNode(udi_interface.Node):
         commands = {'commands': [{'code': 'switch_1', 'value': True}]}
         openapi.post(
             '/v1.0/iot-03/devices/{}/commands'.format(DEVICESW_ID), commands)
-        time.sleep(.1)
+        time.sleep(.5)
         self.SwStat(self)
 
     def setSwOff(self, command):
@@ -57,7 +57,7 @@ class SwitchNode(udi_interface.Node):
         commands = {'commands': [{'code': 'switch_1', 'value': False}]}
         openapi.post(
             '/v1.0/iot-03/devices/{}/commands'.format(DEVICESW_ID), commands)
-        time.sleep(.1)
+        time.sleep(.5)
         self.SwStat(self)
 
     def SwStat(self, command):

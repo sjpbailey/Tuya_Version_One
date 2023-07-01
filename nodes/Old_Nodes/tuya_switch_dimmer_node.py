@@ -17,7 +17,7 @@ class SwitchNode(udi_interface.Node):
     def __init__(self, polyglot, primary, address, name, new_id, deviceid, apiAccessId, apiSecret, apiEndpoint):
         super(SwitchNode, self).__init__(polyglot, primary, address, name)
         self.poly = polyglot
-        self.lpfx = '%s:%s' % (address, name)
+        self.lpfx = '%s:%s' % (address, name)  # address,name
         self.poly.subscribe(self.poly.START, self.start, address)
         self.poly.subscribe(self.poly.POLL, self.poll)
         self.new_id = new_id
@@ -40,10 +40,10 @@ class SwitchNode(udi_interface.Node):
         openapi = TuyaOpenAPI(API_ENDPOINT, ACCESS_ID, ACCESS_KEY)
         openapi.connect()
 
-        commands = {'commands': [{'code': 'switch_1', 'value': True}]}
+        commands = {'commands': [{'code': 'switch_led_1', 'value': True}]}
         openapi.post(
             '/v1.0/iot-03/devices/{}/commands'.format(DEVICESW_ID), commands)
-        time.sleep(.1)
+        time.sleep(.5)
         self.SwStat(self)
 
     def setSwOff(self, command):
@@ -54,17 +54,78 @@ class SwitchNode(udi_interface.Node):
         openapi = TuyaOpenAPI(API_ENDPOINT, ACCESS_ID, ACCESS_KEY)
         openapi.connect()
 
-        commands = {'commands': [{'code': 'switch_1', 'value': False}]}
+        commands = {'commands': [{'code': 'switch_led_1', 'value': False}]}
         openapi.post(
             '/v1.0/iot-03/devices/{}/commands'.format(DEVICESW_ID), commands)
-        time.sleep(.1)
+        time.sleep(.5)
         self.SwStat(self)
 
-    def SwStat(self, command):
+    def setDim(self, command):
         API_ENDPOINT = self.API_ENDPOINT
         ACCESS_ID = self.ACCESS_ID
         ACCESS_KEY = self.ACCESS_KEY
         DEVICESW_ID = self.DEVICESW_ID
+
+        openapi = TuyaOpenAPI(API_ENDPOINT, ACCESS_ID, ACCESS_KEY)
+        openapi.connect()
+        self.SwStat(self)
+        ivr_one = 'percent'
+        percent = int(command.get('value'))
+
+        def set_percent(self, command):
+            percent = int(command.get('value')*10)
+        if percent < 1 or percent > 100:
+            LOGGER.error('Invalid Level {}'.format(percent))
+        else:
+            commands = {'commands': [
+                {'code': 'bright_value_1', 'value': int(percent)*10}]}
+            openapi.post(
+                '/v1.0/iot-03/devices/{}/commands'.format(DEVICESW_ID), commands)
+            self.setDriver('GV3', percent)
+            LOGGER.info('Dimmer Setpoint = ' + str(percent) + ' Level')
+
+    # Set Modes
+    def modeOn(self, command):
+        API_ENDPOINT = self.API_ENDPOINT
+        # LOGGER.info(API_ENDPOINT)
+        ACCESS_ID = self.ACCESS_ID
+        # LOGGER.info(ACCESS_ID)
+        ACCESS_KEY = self.ACCESS_KEY
+        # LOGGER.info(ACCESS_KEY)
+        DEVICESW_ID = self.DEVICESW_ID
+        # LOGGER.info(DEVICELED_ID)
+        self.SwStat(self)
+        openapi = TuyaOpenAPI(API_ENDPOINT, ACCESS_ID, ACCESS_KEY)
+        openapi.connect()
+        self.modeOn = int(command.get('value'))
+        self.setDriver('GV4', self.modeOn)
+        # halogen
+        if self.modeOn == 0:
+            commands = {'commands': [
+                {'code': 'led_type_1', 'value': 'halogen'}]}
+            openapi.post(
+                '/v1.0/iot-03/devices/{}/commands'.format(DEVICESW_ID), commands)
+            LOGGER.info('Halogen')
+            self.SwStat(self)
+        # incandescent
+        elif self.modeOn == 1:
+            commands = {'commands': [
+                {'code': 'led_type_1', 'value': 'incandescent'}]}
+            openapi.post(
+                '/v1.0/iot-03/devices/{}/commands'.format(DEVICESW_ID), commands)
+            LOGGER.info('incandescent')
+        else:
+            return
+
+    def SwStat(self, command):
+        API_ENDPOINT = self.API_ENDPOINT
+        # LOGGER.info(API_ENDPOINT)
+        ACCESS_ID = self.ACCESS_ID
+        # LOGGER.info(ACCESS_ID)
+        ACCESS_KEY = self.ACCESS_KEY
+        # LOGGER.info(ACCESS_KEY)
+        DEVICESW_ID = self.DEVICESW_ID
+        # LOGGER.info(DEVICESW_ID)
         openapi = TuyaOpenAPI(API_ENDPOINT, ACCESS_ID, ACCESS_KEY)
         openapi.connect()
 
@@ -93,12 +154,16 @@ class SwitchNode(udi_interface.Node):
     drivers = [
         {'driver': 'ST', 'value': 0, 'uom': 2},
         {'driver': 'GV2', 'value': 0, 'uom': 2},
+        {'driver': 'GV3', 'value': 0, 'uom': 51},
+        {'driver': 'GV4', 'value': 0, 'uom': 25},
     ]
 
-    id = 'switch'
+    id = 'switchdim'
 
     commands = {
         'SWTON': setSwOn,
         'SWTOF': setSwOff,
+        'STLVL': setDim,
+        'MODESW': modeOn,
         'QUERY': query
     }
