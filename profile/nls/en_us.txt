@@ -13,12 +13,12 @@ ISS-3 = Auto
 
 # LightNodeV1
 ND-lightv1-NAME = Light Node V1
-ND-lightv1-ICON = Output
+ND-lightv1-ICON = LampAndSwitch
 ST-lgtv1-ST-NAME = Node Status
 ST-lgtv1-GV2-NAME = Light Status
 ST-lgtv1-GV3-NAME = Light Level
 ST-lgtv1-GV4-NAME = Light Mode Command
-#ST-lgtv1-GV5-NAME = Light Color Command
+ST-lgtv1-GV5-NAME = Light Color Command
 #ST-lgtv1-GV5-NAME = Light Colour
 #ST-lgtv1-GV6-NAME = Light Scene
 #ST-lgtv1-GV7-NAME = Light Music
@@ -27,43 +27,52 @@ ST-lgtv1-GV4-NAME = Light Mode Command
 
 CMD-lgtv1-LGTON-NAME = Light On
 CMD-lgtv1-LGTOF-NAME = Light Off
-#CMD-lgtv1-LGTCFLIP-NAME = Light Test
-#CMD-lgtv1-STLVL-NAME = Set Level
+CMD-lgtv1-LGTCL-NAME = Light Color
+CMD-lgtv1-STLVL-NAME = Set Level
 CMD-lgtv1-MODE-NAME = Command
-
+#CMD-lgtv1-LGTCFLIP-NAME = Light Test
 
 # LightNodeV2
 ND-lightv2-NAME = Light Node V2
-ND-lightv2-ICON = Output
+ND-lightv2-ICON = LampAndSwitch
 ST-lgtv2-ST-NAME = Node Status
 ST-lgtv2-GV2-NAME = Light Status
 ST-lgtv2-GV3-NAME = Light Level
 ST-lgtv2-GV4-NAME = Light Mode Command
 #ST-lgtv2-GV5-NAME = Light Color Command
-#ST-lgtv2-GV5-NAME = Light Colour
+ST-lgtv2-GV5-NAME = Light Colour
 #ST-lgtv2-GV6-NAME = Light Scene
 #ST-lgtv2-GV7-NAME = Light Music
 #ST-lgtv2-GV8-NAME = Light White
 
-
 CMD-lgtv2-LGTON-NAME = Light On
 CMD-lgtv2-LGTOF-NAME = Light Off
-CMD-lgtv2-LGTCFLIP-NAME = Light Test
-CMD-lgtv2-STLVL-NAME = Set Level
+CMD-lgtv2-LGTCL-NAME = Light Color
+CMD-lgtv2-STLVL-NAME = Level White
 CMD-lgtv2-MODE-NAME = Command
 
 # LED Modes
 MODE-0 = Colour
 MODE-1 = Scene
 MODE-2 = Music
-MODE-3 = Red
-MODE-4 = Orange
-MODE-5 = Yellow
-MODE-6 = Green
-MODE-7 = Blue
-MODE-8 = Indigo
-MODE-9 = Violet
-MODE-10 = White
+
+# LED Color
+MODECL-0 = Red High
+MODECL-1 = Red Low
+MODECL-2 = Orange High
+MODECL-3 = Orange low
+MODECL-4 = Yellow High
+MODECL-5 = Yellow Low
+MODECL-6 = Green High
+MODECL-7 = Green Low
+MODECL-8 = Blue High
+MODECL-9 = Blue Low
+MODECL-10 = Indigo High
+MODECL-11 = Indigo Low
+MODECL-12 = Violet High
+MODECL-13 = Violet Low
+MODECL-14 = White Colour
+MODECL-15 = White Work
 
 # Switch
 ND-switch-NAME = Switch 

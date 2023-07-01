@@ -19,13 +19,14 @@
             <st id="GV2" editor="bool" />
             <st id="GV3" editor="LEVEL" />
             <st id="GV4" editor="MODE" />
+            <st id="GV5" editor="MODECL" />
         </sts>
         <cmds>
             <sends />
             <accepts>
                 <cmd id="LGTON" />
                 <cmd id="LGTOF" />
-                <cmd id="LGTCFLIP" />
+                <!--<cmd id="LGTCFLIP" />-->
 
                 <cmd id="STLVL">
                     <p id="" editor="LEVEL" init="GV3" />
@@ -33,6 +34,10 @@
 
                 <cmd id="MODE">
                     <p id="" editor="MODE" init="GV4" />
+                </cmd>
+
+                <cmd id="LGTCL">
+                    <p id="" editor="MODECL" init="GV5" />
                 </cmd>
 
                 <cmd id="QUERY" />
@@ -59,8 +64,9 @@
         <sts>
             <st id="ST" editor="bool" />
             <st id="GV2" editor="bool" />
-            <st id="GV3" editor="LEVEL" />
+            <!--<st id="GV3" editor="LEVEL" />-->?
             <st id="GV4" editor="MODE" />
+            <st id="GV5" editor="MODECL" />
         </sts>
         <cmds>
             <sends />
@@ -77,21 +83,10 @@
                     <p id="" editor="MODE" init="GV4" />
                 </cmd>
 
-                <cmd id="QUERY" />
-            </accepts>
-        </cmds>
-    </nodeDef>
-    <nodeDef id="switch" nls="swt">
-        <editors />
-        <sts>
-            <st id="ST" editor="bool" />
-            <st id="GV2" editor="bool" />
-        </sts>
-        <cmds>
-            <sends />
-            <accepts>
-                <cmd id="SWTON" />
-                <cmd id="SWTOF" />
+                <cmd id="LGTCL">
+                    <p id="" editor="MODECL" init="GV5" />
+                </cmd>
+
                 <cmd id="QUERY" />
             </accepts>
         </cmds>
