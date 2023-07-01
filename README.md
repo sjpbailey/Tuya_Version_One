@@ -2,7 +2,7 @@
 
 ## Currently for Tuya TreatLife Dimmers, Switches, LED Bulbs and Strip Lights
 
-* ![Tuya-Bulb-Control](<https://github.com/sjpbailey/udi-tuya-poly-cloud-api-v3/blob/main/images_go/Screenshot%202023-06-21%20at%202.35.55%20AM.png>)
+* [Please See](<https://github.com/sjpbailey/Documentation/blob/main/Tuya%20Documents/README.md>)
 
 * Device Model Numbers:
 * LED Strip V1 - \u706f\u5e26\u63a7\u5236\u5668\uff08BK\uff09
