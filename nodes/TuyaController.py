@@ -141,7 +141,7 @@ class TuyaController(udi_interface.Node):
             new_id = id1
             LOGGER.info('Address')
             LOGGER.info(address)
-            if i['model'] == "SS01S(\u4e0d\u5206\u8d1f\u8f7d)\u4e50\u946b":
+            if i['model'] == "SS01S(\u4e0d\u5206\u8d1f\u8f7d)\u4e50\u946b" or i['model'] == "SP10" or i['product_name'] == "Smart Socket":
                 LOGGER.info('Device Type')
                 LOGGER.info("SWITCH")
                 LOGGER.info('\n')
@@ -173,7 +173,7 @@ class TuyaController(udi_interface.Node):
                     self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint, self.apiRegion)
                 self.poly.addNode(node)
                 self.wait_for_node_done()
-            elif i['model'] == "SL10" or i['model'] == "SP10" or i['product_name'] == "Smart Socket":
+            elif i['model'] == "SL10":
                 LOGGER.info('Device Type')
                 LOGGER.info("LED-V2")
                 LOGGER.info('\n')
