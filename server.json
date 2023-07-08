@@ -10,7 +10,7 @@
 	"longPoll": "6600",
 	"testMode": false,
 	"logLevel": "INFO",
-	"profile_version": "3.0.7",
+	"profile_version": "3.0.8",
 	"customParams": {
 		"apiAccessId": "Your_Access_Id",
 		"apiKey": "Your_Secret",
@@ -23,7 +23,7 @@
 		{
 			"title": "Tuya TreatLife LED Bulbs and Switches",
 			"author": "Steve Bailey (sjpbailey)",
-			"version": "3.0.7",
+			"version": "3.0.8",
 			"date": "June 15, 2023",
 			"source": "https://github.com/sjpbailey/udi-tuya-poly-cloud-api-v3",
 			"license": "https://github.com/sjpbailey/udi-tuya-poly-cloud-api-v3/LICENSE"
