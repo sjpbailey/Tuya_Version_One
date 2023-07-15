@@ -157,6 +157,14 @@ class TuyaController(udi_interface.Node):
                     self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint)
                 self.poly.addNode(node)
                 self.wait_for_node_done()
+            elif i['model'] == "SS01" or i['product_name'] == "3 Way Smart Switch":
+                LOGGER.info('Device Type')
+                LOGGER.info("Three Way SWITCH")
+                LOGGER.info('\n')
+                node = tuya_switch_node.SwitchNode(
+                    self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint)
+                self.poly.addNode(node)
+                self.wait_for_node_done()
             elif i['model'] == "SS01S\uff08\u706b\u7ebf\u8d1f\u8f7d\u7ebf\u4e0d\u5206\u7248\u672c\uff09BK\u7248\u672c":
                 LOGGER.info('Device Type')
                 LOGGER.info("SWITCH")
