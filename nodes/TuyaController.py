@@ -141,7 +141,7 @@ class TuyaController(udi_interface.Node):
             new_id = id1
             LOGGER.info('Address')
             LOGGER.info(address)
-            if i['model'] == "SS01S(\u4e0d\u5206\u8d1f\u8f7d)\u4e50\u946b" or i['model'] == "SP10" or i['product_name'] == "Smart Socket":
+            if i['model'] == "SS01S(\u4e0d\u5206\u8d1f\u8f7d)\u4e50\u946b" or i['model'] == "SP10" or i['product_name'] == "Smart Socket" or i['product_name'] == "Mini Smart Plug":
                 LOGGER.info('Device Type')
                 LOGGER.info("SWITCH")
                 LOGGER.info('\n')
@@ -149,7 +149,7 @@ class TuyaController(udi_interface.Node):
                     self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint)
                 self.poly.addNode(node)
                 self.wait_for_node_done()
-            elif i['model'] == "\u5f00\u5173(\u84dd\u7259+Wi-Fi)":
+            elif i['model'] == "\u5f00\u5173(\u84dd\u7259+Wi-Fi)" or i['product_id'] == "0g1fmqh6d5io7lcn":
                 LOGGER.info('Device Type')
                 LOGGER.info("SWITCH")
                 LOGGER.info('\n')
@@ -197,7 +197,7 @@ class TuyaController(udi_interface.Node):
                     self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint)
                 self.poly.addNode(node)
                 self.wait_for_node_done()
-            elif i['product_name'] == "120V A19 9W SMART BULB":
+            elif i['product_name'] == "120V A19 9W SMART BULB" or ['product_name'] == "Smart Bulb-SL20" or i['product_id'] == "cdy6tbsxmkvgjmyh":
                 LOGGER.info('Device Type')
                 LOGGER.info("LED-V2")
                 LOGGER.info('\n')
