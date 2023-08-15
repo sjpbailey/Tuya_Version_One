@@ -25,8 +25,7 @@ class TuyaController(udi_interface.Node):
     id = 'ctl'
     drivers = [
         {'driver': 'ST', 'value': 1, 'uom': 2},
-        {'driver': 'GV0', 'value': 0, 'uom': 56},
-    ]
+        ]
 
     def __init__(self, polyglot, parent, address, name):
         super(TuyaController, self).__init__(polyglot, parent, address, name)
