@@ -35,10 +35,7 @@ class LightNode(udi_interface.Node):
         self.apiRegion = apiRegion
         self.API_REGION = apiRegion
         self.SwStat(self)
-        self.setDriver('ST', 1)
-        # LOGGER.info('{name}\n{id_new}\n{ip}\n{key}\n'.format(
-        # name=name, id_new=id_new, ip=ip, key=key,))
-
+        
     # Light On
     def setSwOn(self, command):
         API_ENDPOINT = self.API_ENDPOINT
@@ -320,6 +317,18 @@ class LightNode(udi_interface.Node):
                 self.setDriver('GV2', 1)
             elif i['value'] == False:
                 self.setDriver('GV2', 0)
+                
+        #### Device Online Status
+        response = openapi.get("/v1.0/devices/{}".format(DEVICELED_ID))
+        LOGGER.info(response['result']['online'])
+        if response['result']['online'] == True:
+            LOGGER.info(response['result']['online'])
+            self.setDriver('ST', 1)
+        if response['result']['online'] == False:
+            LOGGER.info(response['result']['online'])
+            self.setDriver('ST', 0)
+        else:
+            pass
 
     def poll(self, polltype):
         if 'longPoll' in polltype:
