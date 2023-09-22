@@ -16,6 +16,7 @@ from nodes import tuya_switch_node
 from nodes import tuya_switch_dimmer_node
 from nodes import tuya_light_node
 from nodes import tuya_light_node_v1
+from nodes import tuya_pir2_node
 
 LOGGER = udi_interface.LOGGER
 Custom = udi_interface.Custom
@@ -156,7 +157,7 @@ class TuyaController(udi_interface.Node):
                     self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint)
                 self.poly.addNode(node)
                 self.wait_for_node_done()
-            elif i['model'] == "SS01" or i['product_name'] == "3 Way Smart Switch":
+            elif i['model'] == "SM-SW202" or i['product_id'] == "tyapv9hrbns9dvfj" or i['model'] == "SS01" or i['product_name'] == "3 Way Smart Switch":
                 LOGGER.info('Device Type')
                 LOGGER.info("Three Way SWITCH")
                 LOGGER.info('\n')
@@ -204,6 +205,14 @@ class TuyaController(udi_interface.Node):
                     self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint, self.apiRegion)
                 self.poly.addNode(node)
                 self.wait_for_node_done()
+            elif i['model'] == "1.0.1" or i['product_id'] == "k2h8vkj98fhvnpiv":
+                LOGGER.info('Device Type')
+                LOGGER.info("PIR2")
+                LOGGER.info('\n')
+                node = tuya_pir2_node.PirNode(
+                    self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint)
+                self.poly.addNode(node)
+                self.wait_for_node_done()            
             else:
                 LOGGER.info("OTHER DEVICE")
 

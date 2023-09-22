@@ -116,5 +116,36 @@
             </accepts>
         </cmds>
     </nodeDef>
+    <nodeDef id="pir2" nls="pir2">
+        <editors />
+        <sts>
+            <st id="ST" editor="bool" />
+            <st id="GV2" editor="bool" />
+            <st id="GV3" editor="LEVELPIR2" />
+            <st id="GV4" editor="PIR2" />
+            <st id="GV5" editor="PIR2" />
+            <st id="GV9" editor="PIR2" />
+            <st id="GV10" editor="PIR2C" />
+        </sts>
+        <cmds>
+            <sends />
+            <accepts>
+                <cmd id="QUERY" />
+                <!--cmd id="POLLIT" /-->
+
+                <cmd id="STLVL">
+                    <p id="" editor="PIRLEVEL" init="GV6" />
+                </cmd>
+
+                <cmd id="STNAR">
+                    <p id="" editor="PIRDETEC" init="GV7" />
+                </cmd>
+
+                <cmd id="STFAR">
+                    <p id="" editor="PIRDETEC" init="GV8" />
+                </cmd>
+            </accepts>
+        </cmds>
+    </nodeDef>
 
 </nodeDefs>

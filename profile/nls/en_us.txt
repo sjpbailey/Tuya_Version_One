@@ -99,3 +99,28 @@ CMD-swtdim-QUERY-NAME = Query
 # Dimmer Modes
 MODESW-0 = halogen
 MODESW-1 = incandescent
+
+# PIR2
+ND-pir2-NAME = PIR2 
+ND-pir2-ICON = MotionSensor
+ST-pir2-ST-NAME = Node Status
+ST-pir2-GV2-NAME = PIR Tripped
+ST-pir2-GV3-NAME = Sensitivity
+ST-pir2-GV4-NAME = Near Detection
+ST-pir2-GV5-NAME = Far Detection
+ST-pir2-GV9-NAME = Target Distance
+ST-pir2-GV10-NAME = Checking Result
+
+CMD-pir2-QUERY-NAME = Query
+#CMD-pir2-POLLIT-NAME = Poll
+CMD-pir2-STLVL-NAME = Set Sensitivity
+CMD-pir2-STNAR-NAME = Set Near Detection
+CMD-pir2-STFAR-NAME = Set Far Detection
+
+# PIR2 Checking
+PIR2C-0 = Checking
+PIR2C-1 = Success
+PIR2C-2 = Failure
+PIR2C-3 = Others
+PIR2C-4 = Comm Fault
+PIR2C-5 = Radar Fault

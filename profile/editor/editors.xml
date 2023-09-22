@@ -27,4 +27,19 @@
     <editor id="MODESW">
         <range uom="25" subset="0-1" nls="MODESW" />
     </editor>
+    <editor id="LEVELPIR2">
+        <range uom="56" min="0" max="100" step="1" prec="0"/>
+    </editor>
+    <editor id = "PIR2" > 
+    <range  uom="56" min="0" max="10000" step="1" prec="0" />
+    </editor>
+    <editor id="PIR2C">
+        <range uom="25" subset="0-5" nls="PIR2C" />
+    </editor>
+    <editor id="PIRLEVEL">
+        <range uom="56" min="0" max="9" step="1" prec="0"/>
+    </editor>
+    <editor id="PIRDETEC">
+        <range uom="38" min="0" max="1000" step="1" prec="0"/>
+    </editor>
 </editors>
