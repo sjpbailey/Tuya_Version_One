@@ -173,7 +173,7 @@ class TuyaController(udi_interface.Node):
                     self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint)
                 self.poly.addNode(node)
                 self.wait_for_node_done()
-            elif i['model'] == "\u706f\u5e26\u63a7\u5236\u5668\uff08BK\uff09" or "product_id" == "aj1e2vrpy87rdy7t":
+            elif i['model'] == "\u706f\u5e26\u63a7\u5236\u5668\uff08BK\uff09" or i["product_id"] == "aj1e2vrpy87rdy7t":
                 LOGGER.info('Device Type')
                 LOGGER.info("LED-V1")
                 LOGGER.info('\n')
@@ -181,7 +181,7 @@ class TuyaController(udi_interface.Node):
                     self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint, self.apiRegion)
                 self.poly.addNode(node)
                 self.wait_for_node_done()
-            elif i['model'] == "SL10" or i['product_name'] == "Merkury BW904 Smart Bulb" or "product_id" == "jph1bkklotfovejk" or "product_id" == "jzkpltrhwqyzoc33":
+            elif i['model'] == "SL10" or i['product_name'] == "Merkury BW904 Smart Bulb" or i["product_id"] == "jph1bkklotfovejk" or i["product_id"] == "jzkpltrhwqyzoc33":
                 LOGGER.info('Device Type')
                 LOGGER.info("LED-V2")
                 LOGGER.info('\n')
