@@ -16,6 +16,7 @@ from nodes import tuya_switch_node
 from nodes import tuya_switch_dimmer_node
 from nodes import tuya_light_node
 from nodes import tuya_light_node_v1
+from nodes import tuya_light_node_v3
 from nodes import tuya_pir2_node
 
 LOGGER = udi_interface.LOGGER
@@ -186,6 +187,14 @@ class TuyaController(udi_interface.Node):
                 LOGGER.info("LED-V2")
                 LOGGER.info('\n')
                 node = tuya_light_node.LightNode(
+                    self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint, self.apiRegion)
+                self.poly.addNode(node)
+                self.wait_for_node_done()
+            elif i["product_id"] == "jph1bkklotfovejk" or i["product_id"] == "jzkpltrhwqyzoc33":
+                LOGGER.info('Device Type')
+                LOGGER.info("LED-V2")
+                LOGGER.info('\n')
+                node = tuya_light_node_v3.LightNode(
                     self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint, self.apiRegion)
                 self.poly.addNode(node)
                 self.wait_for_node_done()
