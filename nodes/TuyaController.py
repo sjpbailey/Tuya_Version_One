@@ -182,7 +182,7 @@ class TuyaController(udi_interface.Node):
                     self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint, self.apiRegion)
                 self.poly.addNode(node)
                 self.wait_for_node_done()
-            elif i['model'] == "SL10" or i['product_name'] == "Merkury BW904 Smart Bulb" or i["product_id"] == "jph1bkklotfovejk" or i["product_id"] == "jzkpltrhwqyzoc33":
+            elif i['model'] == "SL10" or i['product_name'] == "Merkury BW904 Smart Bulb":
                 LOGGER.info('Device Type')
                 LOGGER.info("LED-V2")
                 LOGGER.info('\n')
