@@ -150,7 +150,7 @@ class TuyaController(udi_interface.Node):
                     self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint)
                 self.poly.addNode(node)
                 self.wait_for_node_done()
-            elif i['model'] == "\u5f00\u5173(\u84dd\u7259+Wi-Fi)" or i['product_id'] == "0g1fmqh6d5io7lcn":
+            elif i['model'] == "\u5f00\u5173(\u84dd\u7259+Wi-Fi)" or i['product_id'] == "0g1fmqh6d5io7lcn" or i["model"] == "MK11" or i["product_id"] == "qCY4YFq02AP0i1Uu":
                 LOGGER.info('Device Type')
                 LOGGER.info("SWITCH")
                 LOGGER.info('\n')
