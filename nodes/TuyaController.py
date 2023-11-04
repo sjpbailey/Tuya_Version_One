@@ -174,7 +174,7 @@ class TuyaController(udi_interface.Node):
                     self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint)
                 self.poly.addNode(node)
                 self.wait_for_node_done()
-            elif i['model'] == "\u706f\u5e26\u63a7\u5236\u5668\uff08BK\uff09" or i["product_id"] == "aj1e2vrpy87rdy7t":
+            elif i['model'] == "\u706f\u5e26\u63a7\u5236\u5668\uff08BK\uff09" or i["product_id"] == "aj1e2vrpy87rdy7t" or i["product_id"] == "cxwfwenub0ahkhxr":
                 LOGGER.info('Device Type')
                 LOGGER.info("LED-V1")
                 LOGGER.info('\n')
