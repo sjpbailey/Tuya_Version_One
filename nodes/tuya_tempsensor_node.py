@@ -56,7 +56,7 @@ class TempSenNode(udi_interface.Node):
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICESW_ID), commands)
             LOGGER.info('Colour')
             time.sleep(.1)
-            self.SwStat(self)
+            self.query(self)
         # Scene
         elif self.modeOn == 1:
             commands = {'commands': [{'code': 'temp_unit_convert', 'value': 'c'}]}
@@ -64,7 +64,7 @@ class TempSenNode(udi_interface.Node):
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICESW_ID), commands)
             LOGGER.info('Scene')
             time.sleep(.1)
-            self.SwStat(self)
+            self.query(self)
         else:
             pass
 
