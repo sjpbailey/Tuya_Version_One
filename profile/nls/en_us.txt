@@ -130,8 +130,8 @@ ND-tempsen-NAME = Temperature Sensor
 ND-tempsen-ICON = TempSensor
 ST-tempsen-ST-NAME = Node Status
 ST-tempsen-GV5-NAME = Mode
-ST-tempsen-GV3-NAME = Temperature
-ST-tempsen-GV4-NAME = Humidity
+ST-tempsen-CLITEMP-NAME = Temperature
+ST-tempsen-CLIHUM-NAME = Humidity
 
 # Temperature Sensor
 CMD-tempsen-QUERY-NAME = Query

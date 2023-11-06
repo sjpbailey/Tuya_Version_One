@@ -67,27 +67,7 @@ class TempSenNode(udi_interface.Node):
             self.SwStat(self)
         else:
             pass
-    
-    def SwStat(self, command):
-        API_ENDPOINT = self.API_ENDPOINT
-        ACCESS_ID = self.ACCESS_ID
-        ACCESS_KEY = self.ACCESS_KEY
-        DEVICESW_ID = self.DEVICESW_ID
-        openapi = TuyaOpenAPI(API_ENDPOINT, ACCESS_ID, ACCESS_KEY)
-        openapi.connect()
 
-        response1 = openapi.get(
-            "/v1.0/iot-03/devices/{}".format(DEVICESW_ID) + "/status/")
-        LOGGER.info(self.name)
-        LOGGER.info(response1)
-        for i in response1['result'][0:1]:
-            if i['value'] == 'alarm':
-                #LOGGER.info('PIR Trip {}'.format(i['value']))
-                self.setDriver('GV2', 1)
-            elif i['value'] == 'normal':
-                #LOGGER.info('PIR Normal {}'.format(i['value']))
-                self.setDriver('GV2', 0)
-                
     def BtStat(self, command):
         API_ENDPOINT = self.API_ENDPOINT
         ACCESS_ID = self.ACCESS_ID
@@ -131,7 +111,7 @@ class TempSenNode(udi_interface.Node):
             #self.query(self)
             LOGGER.debug('longPoll (node)')
         else:
-            self.SwStat(self)
+            self.BtStat(self)
             LOGGER.debug('shortPoll (node)')
 
     def query(self, command=None):
@@ -141,8 +121,8 @@ class TempSenNode(udi_interface.Node):
     drivers = [
         {'driver': 'ST', 'value': 0, 'uom': 2, 'name': 'Online'},
         {'driver': 'GV2', 'value': 0, 'uom': 2, 'name': 'Status'},
-        {'driver': 'GV3', 'value': 0, 'uom': 17, 'name': 'Temperature'},
-        {'driver': 'GV4', 'value': 0, 'uom': 22, 'name': 'Humidity'},
+        {'driver': 'CLITEMP', 'value': 0, 'uom': 17, 'name': 'Temperature'},
+        {'driver': 'CLIHUM', 'value': 0, 'uom': 22, 'name': 'Humidity'},
         {'driver': 'GV5', 'value': 0, 'uom': 25, 'name': 'Command'},
     ]
 

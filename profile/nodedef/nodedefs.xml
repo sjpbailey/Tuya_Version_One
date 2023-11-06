@@ -153,8 +153,8 @@
         <sts>
             <st id="ST" editor="bool" />
             <!--st id="GV2" editor="SENSE" /-->
-            <st id="GV3" editor="TEMP_F" />
-            <st id="GV4" editor="HUMID" />
+            <st id="CLITEMP" editor="TEMP_F" />
+            <st id="CLIHUM" editor="HUMID" />
 
         </sts>
         <cmds>
