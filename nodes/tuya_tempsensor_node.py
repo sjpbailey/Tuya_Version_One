@@ -82,10 +82,10 @@ class TempSenNode(udi_interface.Node):
         LOGGER.info(response1)
         for i in response1['result'][0:1]:
             LOGGER.info(i['value'])
-            self.setDriver('GV3', i['value'])
+            self.setDriver('CLITEMP', i['value'])
         for i in response1['result'][1:2]:
             LOGGER.info(i['value'])
-            self.setDriver('GV4', i['value'])    
+            self.setDriver('CLIHUM', i['value'])    
         for i in response1['result'][1:2]:
             LOGGER.info(i['value'])
             self.setDriver('GV4', i['value'])
