@@ -155,15 +155,18 @@
             <!--st id="GV2" editor="SENSE" /-->
             <st id="GV3" editor="TEMP_F" />
             <st id="GV4" editor="HUMID" />
+
         </sts>
         <cmds>
             <sends />
             <accepts>
                 <cmd id="QUERY" />
                 <cmd id="POLLIT" />
+                
                 <cmd id="MODETS">
                     <p id="" editor="MODETS" init="GV5" />
                 </cmd>
+            
             </accepts>
         </cmds>
     </nodeDef>

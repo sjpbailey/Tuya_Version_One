@@ -151,5 +151,5 @@ class TempSenNode(udi_interface.Node):
     commands = {
         'QUERY': query,
         'POLLIT': gopol,
-        'MODE': modeOn,
+        'MODETS': modeOn,
     }

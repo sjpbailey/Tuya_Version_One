@@ -129,13 +129,14 @@ PIR2C-5 = Radar Fault
 ND-tempsen-NAME = Temperature Sensor 
 ND-tempsen-ICON = TempSensor
 ST-tempsen-ST-NAME = Node Status
-#ST-tempsen-GV2-NAME = Command
+ST-tempsen-GV5-NAME = Mode
 ST-tempsen-GV3-NAME = Temperature
 ST-tempsen-GV4-NAME = Humidity
 
 # Temperature Sensor
 CMD-tempsen-QUERY-NAME = Query
 CMD-tempsen-POLLIT-NAME = Poll
+CMD-tempsen-MODETS-NAME = MODE
 
 # Temperature Sensor
 MODETS-0 = C
