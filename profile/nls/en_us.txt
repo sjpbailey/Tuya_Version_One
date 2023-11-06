@@ -133,6 +133,7 @@ ST-tempsen-GV5-NAME = Mode
 ST-tempsen-CLITEMP-NAME = Temperature
 ST-tempsen-CLIHUM-NAME = Humidity
 ST-tempsen-GV4-NAME = Battery
+ST-tempsen-GV6-NAME = Command Status
 
 # Temperature Sensor
 CMD-tempsen-QUERY-NAME = Query

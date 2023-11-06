@@ -54,7 +54,7 @@ class TempSenNode(udi_interface.Node):
             commands = {'commands': [{'code': 'temp_unit_convert', 'value': 'f'}]}
             openapi.post(
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICESW_ID), commands)
-            LOGGER.info('Colour')
+            LOGGER.info('f')
             time.sleep(.1)
             self.query(self)
         # Scene
@@ -62,7 +62,7 @@ class TempSenNode(udi_interface.Node):
             commands = {'commands': [{'code': 'temp_unit_convert', 'value': 'c'}]}
             openapi.post(
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICESW_ID), commands)
-            LOGGER.info('Scene')
+            LOGGER.info('c')
             time.sleep(.1)
             self.query(self)
         else:
@@ -86,6 +86,16 @@ class TempSenNode(udi_interface.Node):
         for i in response1['result'][1:2]:
             LOGGER.info(i['value'])
             self.setDriver('CLIHUM', i['value'])    
+        for i in response1['result'][3:4]:
+            LOGGER.info('Actual Setting F/C')
+            LOGGER.info(i['value'])
+            if i['value'] == "f":
+                LOGGER.info(i['value'])
+                self.setDriver('GV6', 0)
+            if i['value'] == "c":
+                LOGGER.info(i['value'])
+                self.setDriver('GV6', 1)
+        
         for i in response1['result'][2:3]:
             LOGGER.info(i['value'])
             if i['value'] == "low":
@@ -132,6 +142,7 @@ class TempSenNode(udi_interface.Node):
         {'driver': 'CLIHUM', 'value': 0, 'uom': 22, 'name': 'Humidity'},
         {'driver': 'GV4', 'value': 0, 'uom': 25, 'name': 'Battery'},
         {'driver': 'GV5', 'value': 0, 'uom': 25, 'name': 'Command'},
+        {'driver': 'GV6', 'value': 0, 'uom': 25, 'name': 'Command Status'},
     ]
 
     id = 'tempsen'
