@@ -44,7 +44,7 @@ class TempSenNode(udi_interface.Node):
         API_ENDPOINT = self.API_ENDPOINT
         ACCESS_ID = self.ACCESS_ID
         ACCESS_KEY = self.ACCESS_KEY
-        DEVICESW_ID = self.DEVICELED_ID
+        DEVICESW_ID = self.DEVICESW_ID
         openapi = TuyaOpenAPI(API_ENDPOINT, ACCESS_ID, ACCESS_KEY)
         openapi.connect()
         self.modeOn = int(command.get('value'))
