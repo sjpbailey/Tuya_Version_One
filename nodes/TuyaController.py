@@ -18,6 +18,7 @@ from nodes import tuya_light_node
 from nodes import tuya_light_node_v1
 from nodes import tuya_light_node_v3
 from nodes import tuya_pir2_node
+from nodes import tuya_tempsensor_node
 
 LOGGER = udi_interface.LOGGER
 Custom = udi_interface.Custom
@@ -221,7 +222,16 @@ class TuyaController(udi_interface.Node):
                 node = tuya_pir2_node.PirNode(
                     self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint)
                 self.poly.addNode(node)
+                self.wait_for_node_done()
+            elif i['model'] == "1.0.1" or i['product_id'] == "lf36y5nwb8jkxwgg":
+                LOGGER.info('Device Type')
+                LOGGER.info("Temperature Sensor")
+                LOGGER.info('\n')
+                node = tuya_tempsensor_node.TempSenNode(
+                    self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint)
+                self.poly.addNode(node)
                 self.wait_for_node_done()            
+            
             else:
                 LOGGER.info("OTHER DEVICE")
 

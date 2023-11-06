@@ -124,3 +124,11 @@ PIR2C-2 = Failure
 PIR2C-3 = Others
 PIR2C-4 = Comm Fault
 PIR2C-5 = Radar Fault
+
+# Temperature Sensor
+ND-tempsen-NAME = Temperature Sensor 
+ND-tempsen-ICON = TempSensor
+ST-tempsen-ST-NAME = Node Status
+#ST-tempsen-GV2-NAME = Command
+ST-tempsen-GV3-NAME = Temperature
+ST-tempsen-GV4-NAME = Humidity
