@@ -152,7 +152,6 @@
         <editors />
         <sts>
             <st id="ST" editor="bool" />
-            <!--st id="GV2" editor="SENSE" /-->
             <st id="CLITEMP" editor="TEMP_F" />
             <st id="CLIHUM" editor="HUMID" />
 
@@ -161,7 +160,6 @@
             <sends />
             <accepts>
                 <cmd id="QUERY" />
-                <cmd id="POLLIT" />
                 
                 <cmd id="MODETS">
                     <p id="" editor="MODETS" init="GV5" />
