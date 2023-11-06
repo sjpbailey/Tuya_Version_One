@@ -155,6 +155,7 @@
             <st id="CLITEMP" editor="TEMP_F" />
             <st id="CLIHUM" editor="HUMID" />
             <st id="GV4" editor="BATTERY" />
+            <st id="GV5" editor="MODETS" />
             <st id="GV6" editor="MODETS" />
         </sts>
         <cmds>
