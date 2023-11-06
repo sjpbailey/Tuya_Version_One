@@ -89,12 +89,14 @@ class TempSenNode(udi_interface.Node):
         if i in response1['result'][2:3] == "low":
             LOGGER.info(i['value'])
             self.setDriver('GV4', 0)
-        if i in response1['result'][2:3] == "middle":
+        elif i in response1['result'][2:3] == "middle":
             LOGGER.info(i['value'])
             self.setDriver('GV4', 1)
-        if i in response1['result'][2:3] == "high":
+        elif i in response1['result'][2:3] == "high":
             LOGGER.info(i['value'])
             self.setDriver('GV4', 2)
+        else:
+            pass
             
                     
         ### Online Status
