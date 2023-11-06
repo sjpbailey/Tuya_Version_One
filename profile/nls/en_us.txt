@@ -139,5 +139,5 @@ CMD-tempsen-POLLIT-NAME = Poll
 CMD-tempsen-MODETS-NAME = MODE
 
 # Temperature Sensor
-MODETS-1 = F
-MODETS-0 = C
+MODETS-0 = F
+MODETS-1 = C
