@@ -152,7 +152,7 @@
         <editors />
         <sts>
             <st id="ST" editor="bool" />
-            <st id="CLITEMP" editor="TEMP_F" />
+            <st id="GV7" editor="TEMP_F" />
             <st id="CLIHUM" editor="HUMID" />
             <st id="GV4" editor="BATTERY" />
             <st id="GV5" editor="MODETS" />

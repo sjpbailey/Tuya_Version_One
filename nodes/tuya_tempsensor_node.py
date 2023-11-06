@@ -138,7 +138,7 @@ class TempSenNode(udi_interface.Node):
     drivers = [
         {'driver': 'ST', 'value': 0, 'uom': 2, 'name': 'Online'},
         {'driver': 'GV2', 'value': 0, 'uom': 2, 'name': 'Status'},
-        {'driver': 'CLITEMP', 'value': 0, 'uom': 14, 'name': 'Temperature'},
+        {'driver': 'GV7', 'value': 0, 'uom': 14, 'name': 'Temperature'},
         {'driver': 'CLIHUM', 'value': 0, 'uom': 22, 'name': 'Humidity'},
         {'driver': 'GV4', 'value': 0, 'uom': 25, 'name': 'Battery'},
         {'driver': 'GV5', 'value': 0, 'uom': 25, 'name': 'Command'},
