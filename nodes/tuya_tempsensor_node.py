@@ -27,7 +27,7 @@ class TempSenNode(udi_interface.Node):
         self.poly.subscribe(self.poly.POLL, self.poll, self.poll) #, self.poll
         self.new_id = new_id
         self.deviceid = deviceid
-        self.DEVICELED_ID = deviceid
+        self.DEVICESW_ID = deviceid
         self.apiAccessId = apiAccessId
         self.ACCESS_ID = apiAccessId
         self.apiSecret = apiSecret
@@ -44,7 +44,7 @@ class TempSenNode(udi_interface.Node):
         API_ENDPOINT = self.API_ENDPOINT
         ACCESS_ID = self.ACCESS_ID
         ACCESS_KEY = self.ACCESS_KEY
-        DEVICELED_ID = self.DEVICELED_ID
+        DEVICESW_ID = self.DEVICELED_ID
         openapi = TuyaOpenAPI(API_ENDPOINT, ACCESS_ID, ACCESS_KEY)
         openapi.connect()
         self.modeOn = int(command.get('value'))
@@ -53,7 +53,7 @@ class TempSenNode(udi_interface.Node):
         if self.modeOn == 0:
             commands = {'commands': [{'code': 'temp_unit_convert', 'value': 'f'}]}
             openapi.post(
-                '/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
+                '/v1.0/iot-03/devices/{}/commands'.format(DEVICESW_ID), commands)
             LOGGER.info('Colour')
             time.sleep(.1)
             self.SwStat(self)
@@ -61,7 +61,7 @@ class TempSenNode(udi_interface.Node):
         elif self.modeOn == 1:
             commands = {'commands': [{'code': 'temp_unit_convert', 'value': 'c'}]}
             openapi.post(
-                '/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
+                '/v1.0/iot-03/devices/{}/commands'.format(DEVICESW_ID), commands)
             LOGGER.info('Scene')
             time.sleep(.1)
             self.SwStat(self)
