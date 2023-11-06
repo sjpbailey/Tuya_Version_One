@@ -51,7 +51,7 @@ class TempSenNode(udi_interface.Node):
         self.setDriver('GV5', self.modeOn)
         # Colour
         if self.modeOn == 0:
-            commands = {'commands': [{'code': 'temp_unit_convert', 'value': 'c'}]}
+            commands = {'commands': [{'code': 'temp_unit_convert', 'value': 'f'}]}
             openapi.post(
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
             LOGGER.info('Colour')
@@ -59,7 +59,7 @@ class TempSenNode(udi_interface.Node):
             self.SwStat(self)
         # Scene
         elif self.modeOn == 1:
-            commands = {'commands': [{'code': 'temp_unit_convert', 'value': 'f'}]}
+            commands = {'commands': [{'code': 'temp_unit_convert', 'value': 'c'}]}
             openapi.post(
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
             LOGGER.info('Scene')
