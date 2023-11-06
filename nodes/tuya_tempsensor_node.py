@@ -102,9 +102,6 @@ class TempSenNode(udi_interface.Node):
             self.setDriver('ST', 0)
         else:
             pass
-
-    def gopol(self, command):
-        self.poll()
     
     def poll(self, polltype):
         if 'longPoll' in polltype:
@@ -130,6 +127,5 @@ class TempSenNode(udi_interface.Node):
 
     commands = {
         'QUERY': query,
-        'POLLIT': gopol,
         'MODETS': modeOn,
     }
