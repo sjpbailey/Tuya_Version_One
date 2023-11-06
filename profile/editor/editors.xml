@@ -49,7 +49,7 @@
         <range uom="4" min="-100" max="100" step="0.5" prec="1" />
     </editor>
     <editor id="TEMP_F">
-        <range uom="17" min="-100" max="220" step="0.5" prec="1" />
+        <range uom="14" min="-100" max="220" step="0.5" prec="1" />
     </editor>
     <editor id="HUMID">
         <range uom="22" min="0" max="100" step="0.5" prec="1" />
