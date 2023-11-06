@@ -161,6 +161,9 @@
             <accepts>
                 <cmd id="QUERY" />
                 <cmd id="POLLIT" />
+                <cmd id="MODETS">
+                    <p id="" editor="MODETS" init="GV5" />
+                </cmd>
             </accepts>
         </cmds>
     </nodeDef>

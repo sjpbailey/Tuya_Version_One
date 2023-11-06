@@ -39,6 +39,35 @@ class TempSenNode(udi_interface.Node):
         LOGGER.info(name)
         self.BtStat(self)
 
+    # Set Modes
+    def modeOn(self, command):
+        API_ENDPOINT = self.API_ENDPOINT
+        ACCESS_ID = self.ACCESS_ID
+        ACCESS_KEY = self.ACCESS_KEY
+        DEVICELED_ID = self.DEVICELED_ID
+        openapi = TuyaOpenAPI(API_ENDPOINT, ACCESS_ID, ACCESS_KEY)
+        openapi.connect()
+        self.modeOn = int(command.get('value'))
+        self.setDriver('GV5', self.modeOn)
+        # Colour
+        if self.modeOn == 0:
+            commands = {'commands': [{'code': 'temp_unit_convert', 'value': 'c'}]}
+            openapi.post(
+                '/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
+            LOGGER.info('Colour')
+            time.sleep(.1)
+            self.SwStat(self)
+        # Scene
+        elif self.modeOn == 1:
+            commands = {'commands': [{'code': 'temp_unit_convert', 'value': 'f'}]}
+            openapi.post(
+                '/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
+            LOGGER.info('Scene')
+            time.sleep(.1)
+            self.SwStat(self)
+        else:
+            pass
+    
     def SwStat(self, command):
         API_ENDPOINT = self.API_ENDPOINT
         ACCESS_ID = self.ACCESS_ID
@@ -114,6 +143,7 @@ class TempSenNode(udi_interface.Node):
         {'driver': 'GV2', 'value': 0, 'uom': 2, 'name': 'Status'},
         {'driver': 'GV3', 'value': 0, 'uom': 17, 'name': 'Temperature'},
         {'driver': 'GV4', 'value': 0, 'uom': 22, 'name': 'Humidity'},
+        {'driver': 'GV5', 'value': 0, 'uom': 25, 'name': 'Command'},
     ]
 
     id = 'tempsen'
@@ -121,4 +151,5 @@ class TempSenNode(udi_interface.Node):
     commands = {
         'QUERY': query,
         'POLLIT': gopol,
+        'MODE': modeOn,
     }
