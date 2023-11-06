@@ -154,6 +154,7 @@
             <st id="ST" editor="bool" />
             <st id="CLITEMP" editor="TEMP_F" />
             <st id="CLIHUM" editor="HUMID" />
+            <st id="GV4" editor="BATTERY" />
 
         </sts>
         <cmds>

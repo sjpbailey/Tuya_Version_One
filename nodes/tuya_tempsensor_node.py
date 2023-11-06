@@ -86,9 +86,15 @@ class TempSenNode(udi_interface.Node):
         for i in response1['result'][1:2]:
             LOGGER.info(i['value'])
             self.setDriver('CLIHUM', i['value'])    
-        for i in response1['result'][1:2]:
+        if i in response1['result'][2:3] == "low":
             LOGGER.info(i['value'])
-            self.setDriver('GV4', i['value'])
+            self.setDriver('GV4', 0)
+        if i in response1['result'][2:3] == "middle":
+            LOGGER.info(i['value'])
+            self.setDriver('GV4', 1)
+        if i in response1['result'][2:3] == "high":
+            LOGGER.info(i['value'])
+            self.setDriver('GV4', 2)
             
                     
         ### Online Status
@@ -120,6 +126,7 @@ class TempSenNode(udi_interface.Node):
         {'driver': 'GV2', 'value': 0, 'uom': 2, 'name': 'Status'},
         {'driver': 'CLITEMP', 'value': 0, 'uom': 17, 'name': 'Temperature'},
         {'driver': 'CLIHUM', 'value': 0, 'uom': 22, 'name': 'Humidity'},
+        {'driver': 'GV4', 'value': 0, 'uom': 25, 'name': 'Battery'},
         {'driver': 'GV5', 'value': 0, 'uom': 25, 'name': 'Command'},
     ]
 

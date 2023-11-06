@@ -132,6 +132,7 @@ ST-tempsen-ST-NAME = Node Status
 ST-tempsen-GV5-NAME = Mode
 ST-tempsen-CLITEMP-NAME = Temperature
 ST-tempsen-CLIHUM-NAME = Humidity
+ST-tempsen-GV4-NAME = Battery
 
 # Temperature Sensor
 CMD-tempsen-QUERY-NAME = Query
@@ -141,3 +142,8 @@ CMD-tempsen-MODETS-NAME = MODE
 # Temperature Sensor
 MODETS-0 = F
 MODETS-1 = C
+
+# Temperature Sensor
+BATTERY-0 = Low
+BATTERY-1 = Middle
+BATTERY-2 = High

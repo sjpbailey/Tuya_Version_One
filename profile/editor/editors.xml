@@ -54,4 +54,7 @@
     <editor id="HUMID">
         <range uom="22" min="0" max="100" step="0.5" prec="1" />
     </editor>
+    <editor id="BATTERY">
+        <range uom="25" subset="0-2" nls="BATTERY" />
+    </editor>
 </editors>
