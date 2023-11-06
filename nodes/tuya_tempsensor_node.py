@@ -27,7 +27,7 @@ class TempSenNode(udi_interface.Node):
         self.poly.subscribe(self.poly.POLL, self.poll, self.poll) #, self.poll
         self.new_id = new_id
         self.deviceid = deviceid
-        self.DEVICESW_ID = deviceid
+        self.DEVICELED_ID = deviceid
         self.apiAccessId = apiAccessId
         self.ACCESS_ID = apiAccessId
         self.apiSecret = apiSecret
